@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Overview do Projeto
 
-## Getting Started
+## ✨ Principais Funcionalidades
 
-First, run the development server:
+- **Catálogo de Produtos:**  
+  Página inicial exibe um grid de produtos ortopédicos. Cada produto possui imagem, nome, código e destaque para lançamentos.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Página Detalhada do Produto:**  
+  Cada produto tem uma página exclusiva com:
+  - Imagens em destaque e galeria
+  - Descrição técnica detalhada
+  - Indicações, especificações técnicas e informações
+  - Carrossel de produtos relacionados
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Internacionalização (i18n):**  
+  Quase todo o conteúdo pode ser alternado entre português, inglês e espanhol, com textos centralizados em arquivos de tradução ao clicar no dropdown da nacionalidade.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Design Responsivo e Moderno:**  
+  Interface adaptada para desktop e mobile, utilizando Tailwind CSS e DaisyUI para agilidade e visual consistente.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Componentização:**  
+  O projeto é organizado em componentes reutilizáveis (Navbar, Footer, Hero, Carrossel, Cards, Filtros, etc.), facilitando manutenção e escalabilidade.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tecnologias Utilizadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js:**  
+  Rotas dinâmicas, SSR e otimização de performance.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Tailwind CSS + DaisyUI:**  
+  Criação rápida de layouts modernos e responsivos.
 
-## Deploy on Vercel
+- **Zustand:**  
+  Gerenciamento global do idioma de forma simples e eficiente.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Estrutura do Projeto
+
+- `src/_components/`: Componentes reutilizáveis (Footer, Navbar, Hero, Produtos, Carrossel, etc.)
+- `src/app/`: Páginas principais e dinâmicas (`[id]` para página de produto)
+- `src/store/`: Gerenciamento de estado global (idioma)
+- `public/`: Imagens, ícones e assets estáticos
+
+---
+
+## 🧩 Detalhes de Implementação
+
+- **Carrossel de Produtos:**  
+  Navegação horizontal para explorar outros produtos da linha.
+
+- **Tradução Centralizada:**  
+  Todos os textos estão em arquivos de tradução, facilitando a manutenção e expansão para novos idiomas.
+
+- **Atenção à Experiência do Usuário:**  
+  Layout limpo, navegação fluida, feedback visual e informações organizadas.
+
+- **Pronto para Escalar:**  
+  Estrutura de pastas e componentes pensada para fácil adição de novos produtos, funcionalidades ou integrações futuras.
