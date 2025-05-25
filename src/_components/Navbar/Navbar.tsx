@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import SelecionaIdioma from '../Footer/SelecionaIdioma/SelecionaIdioma';
 import Traducao from './traducao';
-
+import Link from 'next/link';
+import Image from 'next/image';
 export default function Navbar() {
     const idioma = useIdiomaStore((state) => state.idioma);
     const t = Traducao[idioma];
@@ -16,7 +17,7 @@ export default function Navbar() {
         buscaBtn?.classList.toggle('hidden');
         elementoBusca?.classList.toggle('hidden');
 
-        buscaBtn?.classList.contains('hidden') ? elementoBusca?.focus() : null;
+        if (buscaBtn?.classList.contains('hidden')) elementoBusca?.focus();
     }
 
     return (
@@ -26,16 +27,16 @@ export default function Navbar() {
 
                 <div className="hidden md:flex items-center gap-4 whitespace-nowrap">
                     {t.items.map((item) => (
-                        <a key={item} href="/" className="text-gray-700 hover:text-shadow-xs hover:text-black">
+                        <Link key={item} href="/" className="text-gray-700 hover:text-shadow-xs hover:text-black">
                             {item}
-                        </a>
+                        </Link>
                     ))}
                     <button className="rounded-full p-1 bg-white shadow text-gray-600 flex items-center justify-center" id="buscaBtn" onClick={handleBuscar}>
-                        <img src="/icons/search.png" className='w-6' />
+                        <Image alt="" src="/icons/search.png" className='w-6' />
 
                     </button>
                     <label className="input input-primary input-sm focus:ring-none hidden " id="busca" onBlur={handleBuscar}>
-                        <img src="/icons/search.png" className='w-6' />
+                        <Image alt="" src="/icons/search.png" className='w-6' />
                         <input type="search" placeholder={t.buscar} />
                     </label>
                 </div>
@@ -58,9 +59,9 @@ export default function Navbar() {
             {open && (
                 <div className="md:hidden flex flex-col align-center bg-white px-6 pt-2 pb-4 shadow gap-2">
                     {t.items.map((item) => (
-                        <a key={item} href="#" className="text-gray-700  hover:bg-gray-200 rounded-md px-4 py-2">
+                        <Link key={item} href="#" className="text-gray-700  hover:bg-gray-200 rounded-md px-4 py-2">
                             {item}
-                        </a>
+                        </Link>
                     ))}
                     <button className="btn btn-primary w-full flex justify-center mt-2 rounded-full py-2">
                         {t.faleConosco}

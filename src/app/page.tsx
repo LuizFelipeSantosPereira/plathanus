@@ -3,7 +3,6 @@ import Navbar from "@/_components/Navbar/Navbar";
 import Hero from "@/_components/Hero/Hero";
 import Familias from "@/_components/Footer/Familias/Familias";
 import Produtos from "@/_components/Produtos/Produtos";
-
 export default function Home() {
   return (
     <div data-theme="orthopedic" className="min-h-screen max-w-[2560px]">

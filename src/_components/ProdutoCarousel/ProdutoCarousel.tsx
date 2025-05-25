@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useRef } from 'react';
-
+import Link from 'next/link';
 const listaProdutos = [1, 2, 3, 4, 1, 2, 4, 1, 2];
 
 export default function ProductCarousel() {
@@ -40,7 +40,7 @@ export default function ProductCarousel() {
                             key={index}
                             className="min-w-[250px] bg-white rounded-box shadow p-4"
                         >
-                            <a href={`/${produto}`}>
+                            <Link href={`/${produto}`}>
                                 <div className="relative">
                                     {produto % 2 == 0 && (
                                         <span className="absolute top-2 left-2 bg-accent text-accent-content px-2 py-1 text-sm rounded">
@@ -59,7 +59,7 @@ export default function ProductCarousel() {
                                 <p className="text-sm text-gray-600">
                                     <strong>Código SKU: {produto % 3 == 0 ? "OR1065 / OR1065" : produto % 2 == 0 ? "OR1066" : "OR1012"}</strong>
                                 </p>
-                            </a>
+                            </Link>
 
                         </div>
                     ))}

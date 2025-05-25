@@ -1,6 +1,5 @@
 'use client';
 import { useIdiomaStore } from '@/store/useIdiomaStore';
-import { useState } from 'react';
 import Traducao from './traducao';
 
 export default function Familias() {

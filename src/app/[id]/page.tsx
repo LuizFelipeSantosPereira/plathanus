@@ -4,12 +4,16 @@ import Navbar from "@/_components/Navbar/Navbar";
 import { useIdiomaStore } from "@/store/useIdiomaStore";
 import Traducao from "./traducao";
 import ProductCarousel from "@/_components/ProdutoCarousel/ProdutoCarousel";
-
-export default function Produto({ params }: { params: { id: string } }) {
+import { useParams } from 'next/navigation';
+import Link from "next/link";
+import Image from "next/image";
+export default function Produto() {
     const idioma = useIdiomaStore((state) => state.idioma);
     const t = Traducao[idioma];
-    const { id } = params;
+    const params = useParams();
+    const id = params.id as string;
     const listaDescricao = [5, 6, 8, 6, 5, 5, 6];
+
     return (
         <div data-theme="orthopedic" className="min-h-screen max-w-[2560px]">
             <Navbar />
@@ -17,10 +21,10 @@ export default function Produto({ params }: { params: { id: string } }) {
                 <div className="breadcrumbs  px-6 pt-4">
                     <ul className="text-xs">
                         <li>
-                            <a className="text-gray-500" href="/">Início</a>
+                            <Link className="text-gray-500" href="/">Início</Link>
                         </li>
                         <li>
-                            <a className="text-gray-500" href="/">Linha Orthopedic</a>
+                            <Link className="text-gray-500" href="/">Linha Orthopedic</Link>
                         </li>
                         <li>
                             <span className="text-gray-800">Órtese Splint Bilateral</span>
@@ -31,11 +35,11 @@ export default function Produto({ params }: { params: { id: string } }) {
                 <div className="flex flex-col lg:flex-row p-6 gap-8">
                     <div className="flex-1">
                         <div className="border border-white p-2">
-                            <img src={`/produtos/${id}.png`} alt="Produto" className="w-full object-cover rounded max-w-[360px] lg:max-w-[720px]" />
+                            <Image src={`/produtos/${id}.png`} alt="Produto" className="w-full object-cover rounded max-w-[360px] lg:max-w-[720px]" />
                         </div>
                         <div className="flex mt-4 gap-2 overflow-x-auto">
                             {listaDescricao.map((produto, i) => (
-                                <img
+                                <Image alt=""
                                     key={i}
                                     src={`/produtos/${produto}.png`}
                                     className="w-20 h-20 object-cover rounded border hover:border-orange-500"
@@ -106,7 +110,7 @@ export default function Produto({ params }: { params: { id: string } }) {
 
                 <div className="p-6">
                     <div className="relative w-full aspect-video bg-gray-800">
-                        <img src="/produtos/video.png" alt="Vídeo" className="absolute inset-0 w-full h-full object-cover" />
+                        <Image src="/produtos/video.png" alt="Vídeo" className="absolute inset-0 w-full h-full object-cover" />
                         <button className="absolute left-1/2 top-1/2 m-auto bg-white text-orange-500 rounded-full px-4 py-3 text-4xl">▶</button>
                     </div>
                 </div>
@@ -126,9 +130,9 @@ export default function Produto({ params }: { params: { id: string } }) {
                             </p>
                             <p>Família voltada para extrair os benefícios do Neoprene. Propriedades térmicas, compressivas e elásticas: são essas três propriedades que fazem do Neoprene uma ferramenta eficaz no tratamento e prevenção de lesões, no tratamento ortopédico</p>
                         </div>
-                        <img src={`/produtos/${id}.png`} alt="Benefício" className="w-64 lg:absolute lg:top-0 lg:right-4/12 " />
+                        <Image src={`/produtos/${id}.png`} alt="Benefício" className="w-64 lg:absolute lg:top-0 lg:right-4/12 " />
                         <div className="border border-dashed border-primary rounded max-w-[220px] p-4 lg:absolute lg:top-0 lg:right-0">
-                            <img src="/produtos/anvisa.png" className="w-42" />
+                            <Image alt="" src="/produtos/anvisa.png" className="w-42" />
                             <p>Autorização e Cadastro de produtos para saúde na ANVISA</p>
                         </div>
                     </div>

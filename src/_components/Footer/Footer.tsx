@@ -3,7 +3,8 @@ import { useIdiomaStore } from '@/store/useIdiomaStore';
 import React from 'react';
 import Traducao from "./traducao"
 import SelecionaIdioma from './SelecionaIdioma/SelecionaIdioma';
-
+import Link from 'next/link';
+import Image from 'next/image';
 export default function Footer() {
     const idioma = useIdiomaStore((state) => state.idioma);
     const t = Traducao[idioma];
@@ -15,7 +16,7 @@ export default function Footer() {
                     <h3 className="text-lg font-semibold mb-4">{t.intitucional.titulo}</h3>
                     <ul className="space-y-2">
                         {t.intitucional.lista.map((item, index) =>
-                            <li key={index}><a href="#" className="link link-hover text-sm">{item}</a></li>)
+                            <li key={index}><Link href="#" className="link link-hover text-sm">{item}</Link></li>)
                         }
                     </ul>
                 </div>
@@ -24,7 +25,7 @@ export default function Footer() {
                     <h3 className="text-lg font-semibold mb-4">{t.catalogo.titulo}</h3>
                     <ul className="space-y-2">
                         {t.catalogo.lista.map((item, index) =>
-                            <li key={index}><a href="#" className="link link-hover text-sm">{item}</a></li>)
+                            <li key={index}><Link href="#" className="link link-hover text-sm">{item}</Link></li>)
                         }
                     </ul>
                 </div>
@@ -33,32 +34,32 @@ export default function Footer() {
                     <h3 className="text-lg font-semibold mb-4">{t.linhaProdutos.titulo}</h3>
                     <ul className="space-y-2">
                         {t.linhaProdutos.lista.map((item, index) =>
-                            <li key={index}><a href="#" className="link link-hover text-sm">{item}</a></li>)}
+                            <li key={index}><Link href="#" className="link link-hover text-sm">{item}</Link></li>)}
                     </ul>
                 </div>
 
                 <div className="flex flex-col items-start">
                     <h3 className="text-lg font-semibold mb-4">{t.contato}</h3>
                     <div className="flex items-center space-x-2 mb-2">
-                        <img src="/icons/telefone.png" className='btn btn-circle btn-sm btn-ghost' />
+                        <Image alt='' src="/icons/telefone.png" className='btn btn-circle btn-sm btn-ghost' />
                         <span className="text-sm">+ 55 48 3333 3333</span>
                     </div>
                     <div className="flex items-center space-x-2 mb-4">
-                        <img src="/icons/email.png" className='btn btn-circle btn-sm btn-ghost' />
+                        <Image alt='' src="/icons/email.png" className='btn btn-circle btn-sm btn-ghost' />
                         <span className="text-sm">{t.email}</span>
                     </div>
 
                     <h3 className="text-lg font-semibold mb-4">{t.siga}</h3>
                     <div className="flex space-x-4">
-                        <a href="#" className="btn btn-circle btn-sm btn-ghost">
-                            <img src="/icons/insta.png" />
-                        </a>
-                        <a href="#" className="btn btn-circle btn-sm btn-ghost">
-                            <img src="/icons/youtube.png" />
-                        </a>
-                        <a href="#" className="btn btn-circle btn-sm btn-ghost">
-                            <img src="/icons/facebook.png" />
-                        </a>
+                        <Link href="#" className="btn btn-circle btn-sm btn-ghost">
+                            <Image alt="" src="/icons/insta.png" />
+                        </Link>
+                        <Link href="#" className="btn btn-circle btn-sm btn-ghost">
+                            <Image alt="" src="/icons/youtube.png" />
+                        </Link>
+                        <Link href="#" className="btn btn-circle btn-sm btn-ghost">
+                            <Image alt="" src="/icons/facebook.png" />
+                        </Link>
                     </div>
                 </div>
             </div>

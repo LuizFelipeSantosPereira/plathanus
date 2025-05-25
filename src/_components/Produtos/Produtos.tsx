@@ -1,12 +1,8 @@
 'use client';
-import { useIdiomaStore } from '@/store/useIdiomaStore';
-import { useState } from 'react';
-import Traducao from './traducao';
-
+import Link from 'next/link';
+import Image from 'next/image';
 export default function Produtos() {
-    const idioma = useIdiomaStore((state) => state.idioma);
-    const t = Traducao[idioma];
-    const [open, setOpen] = useState(false);
+    //const t = Traducao[idioma];
     const lista = [1, 2, 3, 4, 1, 2, 4, 1, 2]
     return (
         <div className="flex flex-col sm:flex-row sm:px-18 mt-8">
@@ -36,7 +32,7 @@ export default function Produtos() {
                     <div className="flex gap-4">
                         <span className="text-sm font-medium p-2 bg-gray-100 rounded-full">86 produtos</span>
                         <button className="rounded-full p-2 bg-gray-100 flex items-center justify-center">
-                            <img src="/icons/search.png" className='w-4' />
+                            <Image alt="" src="/icons/search.png" className='w-4' />
                         </button>
                     </div>
 
@@ -62,9 +58,9 @@ export default function Produtos() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
                     {lista.map((produto, index) => (
                         <div key={index} className="space-y-2 flex flex-col">
-                            <a href={`/${produto}`}>
+                            <Link href={`/${produto}`}>
                                 <div className="relative w-full aspect-3/2 sm:aspect-[3/4]  rounded overflow-hidden">
-                                    <img
+                                    <Image
                                         src={`/produtos/${produto}.png`}
                                         alt="Produto"
                                         className="w-full h-full object-cover rounded-lg border border-gray-200"
@@ -81,7 +77,7 @@ export default function Produtos() {
                                         Cód. Produto <strong>{index % 3 === 0 ? 'OR1051' : 'OR1065'}</strong>
                                     </p>
                                 </div>
-                            </a>
+                            </Link>
 
                         </div>
                     ))}
