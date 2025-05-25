@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "orthopedic";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97% 0.005 240);
+  --color-base-300: oklch(94% 0.01 240); 
+  --color-base-content: oklch(10% 0.01 240); 
+
+  --color-primary: oklch(70% 0.18 55); 
+  --color-primary-content: oklch(98% 0.01 50);
+
+  --color-secondary: oklch(75% 0.08 60); 
+  --color-secondary-content: oklch(20% 0.01 60);
+
+  --color-accent: oklch(40% 0.15 340);
+  --color-accent-content: oklch(98% 0.01 300);
+
+  --color-neutral: oklch(42% 0.0021 145.54); 
+  --color-neutral-content: oklch(98% 0.01 240);
+
+  --color-info: oklch(70% 0.15 220);
+  --color-info-content: oklch(98% 0.01 220);
+
+  --color-success: oklch(65% 0.15 140);
+  --color-success-content: oklch(98% 0.01 140);
+
+  --color-warning: oklch(80% 0.15 80);
+  --color-warning-content: oklch(20% 0.01 80);
+
+  --color-error: oklch(65% 0.15 30);
+  --color-error-content: oklch(98% 0.01 30);
+
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 0;
+  --noise: 1 ;
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
